@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Job Application</title>
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+    <style>
+        /* Modern CSS Design */
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navbar {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            margin: 0;
+        }
+        .navbar ul li {
+            margin: 0 20px;
+        }
+        .navbar ul li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .navbar ul li a:hover {
+            color: #2575fc;
+        }
+        #navbar-toggle {
+            display: none;
+            background: #2575fc;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .section {
+            padding: 40px;
+            margin: 20px auto;
+            background-color: #fff;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #6a11cb;
+            color: #fff;
+            margin-top: 40px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            overflow-y: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #333;
+        }
+        .submit-disabled-message {
+            color: #d9534f;
+            font-size: 0.9em;
+            margin-top: 10px;
+            display: none;
+        }
+        .invalid-field {
+            border-color: #d9534f;
+            box-shadow: 0 0 5px rgba(217, 83, 79, 0.5);
+        }
+        #contact-form input,
+        #contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+        #contact-form input:focus,
+        #contact-form textarea:focus {
+            border-color: #2575fc;
+            box-shadow: 0 0 8px rgba(37, 117, 252, 0.3);
+        }
+        #contact-form button {
+            background-color: #2575fc;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        #contact-form button:hover {
+            background-color: #6a11cb;
+        }
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            #navbar-toggle {
+                display: block;
+                margin: 10px auto;
+            }
+            #navbar-menu[hidden] {
+                display: none;
+            }
+        }
+    </style>
+    <script defer src="scripts.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <h1>David Roker</h1>
+            <p>Aspiring Professional in Privacy Consultant Seeking Opportunities in 2024</p>
+        </div>
+    </header>
+
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <button id="navbar-toggle" aria-expanded="false" aria-controls="navbar-menu">Menu</button>
+        <ul id="navbar-menu" hidden>
+            <li><a href="#about" role="menuitem">About Me</a></li>
+            <li><a href="#experience" role="menuitem">Experience</a></li>
+            <li><a href="#skills" role="menuitem">Skills</a></li>
+            <li><a href="#education" role="menuitem">Education</a></li>
+            <li><a href="#contact" role="menuitem">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p>Hello! I'm David Roker, a passionate and hardworking professional with experience in Privacy Consultant. I bring 4-5 years of experience, focusing on protecting users data. My goal is to leverage my background to make a positive impact at a forward-thinking organization in 2024.</p>
+        </section>
+
+        <section id="experience" class="section">
+            <h2>Experience</h2>
+            <div class="job">
+                <h3>GrubHub for Drivers, Chicago, Illinois</h3>
+                <p>Duration: October 2024 Current</p>
+                <ul>
+                    <li>Read maps, followed oral, and written instructions and used GPS technology to make deliveries.</li>
+                    <li>Completed on-time deliveries by choosing best and most efficient routes.</li>
+                    <li>Completed rush deliveries on tight timetables to satisfy customer needs.</li>
+                </ul>
+            </div>
+            <div class="job">
+                <h3>DoorDash - Dasher, San Francisco, CA</h3>
+                <p>Duration: October 2024</p>
+                <ul>
+                    <li>Read maps, followed oral, and written instructions and used GPS technology to make deliveries.</li>
+                    <li>Maintained upbeat, positive attitude in busy, customer-focused environment.</li>
+                    <li>Delivered packages to customer doorsteps and business offices.</li>
+                </ul>
+            </div>
+            <div class="job">
+                <h3>Uber Eats, San Francisco, CA</h3>
+                <p>Duration: October 2024</p>
+                <ul>
+                    <li>Read maps, followed oral, and written instructions and used GPS technology to make deliveries.</li>
+                    <li>Maintained upbeat, positive attitude in busy, customer-focused environment.</li>
+                    <li>Delivered packages to customer doorsteps and business offices.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>System Administration</li>
+                <li>DDoS Prevention</li>
+                <li>Encryption</li>
+                <li>Protecting Data</li>
+            </ul>
+        </section>
+
+        <section id="education" class="section">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Degree - Wyncote Academy</h3>
+                <p>Year of Graduation: 2020</p>
+                <p>Awarded honor roll in my 10th grade and 12th grade year.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="pgp-key">PGP/GPG Public Key:</label>
+                    <textarea id="pgp-key" name="pgp-key" rows="3" placeholder="Enter your PGP/GPG public key here"></textarea>
+                </div>
+                <button type="submit" id="submit-button" disabled>Send Encrypted Message</button>
+                <p id="submit-disabled-message" class="submit-disabled-message">Please fill out all required fields to enable the submit button.</p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 David Roker. All rights reserved.</p>
+    </footer>
+
+    <div id="modal" class="modal" role="dialog" aria-labelledby="modal-message" aria-hidden="true">
+        <div class="modal-content">
+            <span class="close" id="close-modal" tabindex="0">&times;</span>
+            <p id="modal-message"></p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contact-form');
+            const submitButton = document.getElementById('submit-button');
+            const submitMessage = document.getElementById('submit-disabled-message');
+            const modal = document.getElementById('modal');
+            const closeModal = document.getElementById('close-modal');
+            const navbarToggle = document.getElementById('navbar-toggle');
+            const navbarMenu = document.getElementById('navbar-menu');
+
+            // Enable or disable the submit button based on form validity
+            form.addEventListener('input', function() {
+                let isValid = true;
+                form.querySelectorAll('[required]').forEach(function(input) {
+                    if (!input.checkValidity()) {
+                        isValid = false;
+                        input.classList.add('invalid-field');
+                    } else {
+                        input.classList.remove('invalid-field');
+                    }
+                });
+                if (isValid) {
+                    submitButton.disabled = false;
+                    submitMessage.style.display = 'none';
+                } else {
+                    submitButton.disabled = true;
+                    submitMessage.style.display = 'block';
+                }
+            });
+
+            // Toggle navigation menu for small screens
+            navbarToggle.addEventListener('click', function() {
+                const isExpanded = navbarToggle.getAttribute('aria-expanded') === 'true';
+                navbarToggle.setAttribute('aria-expanded', !isExpanded);
+                navbarMenu.hidden = isExpanded;
+            });
+
+            // Focus on the modal when it becomes visible
+            function openModal() {
+                modal.style.display = 'block';
+                modal.setAttribute('aria-hidden', 'false');
+                closeModal.focus();
+                trapFocus(modal);
+            }
+
+            // Trap focus inside the modal
+            function trapFocus(element) {
+                const focusableElements = element.querySelectorAll('a[href], button, textarea, input[type="text"], input[type="email"], [tabindex]:not([tabindex="-1"])');
+                const firstElement = focusableElements[0];
+                const lastElement = focusableElements[focusableElements.length - 1];
+
+                element.addEventListener('keydown', function(event) {
+                    if (event.key === 'Tab') {
+                        if (event.shiftKey) { // Shift + Tab
+                            if (document.activeElement === firstElement) {
+                                event.preventDefault();
+                                lastElement.focus();
+                            }
+                        } else { // Tab
+                            if (document.activeElement === lastElement) {
+                                event.preventDefault();
+                                firstElement.focus();
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Close the modal when the close button is clicked
+            closeModal.addEventListener('click', function() {
+                modal.style.display = 'none';
+                modal.setAttribute('aria-hidden', 'true');
+            });
+
+            // Close the modal when clicking outside of it
+            window.addEventListener('click', function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                    modal.set
+
